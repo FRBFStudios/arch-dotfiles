@@ -1,0 +1,280 @@
+@import 'colors.css';
+
+* {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: transparent;
+    background-color: transparent;
+    color: transparent;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    margin: 0;
+    border-radius: 0px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+#mpris {
+    color: @primary;
+    background-color: @surface_container;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+.modules-left {
+    background-color: @surface_container;
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+}
+
+.modules-right {
+    background-color: @surface_container;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    margin: 0 2px;
+    border-radius: 2px;
+    background: @surface_container_low;
+    color: @primary;
+}
+
+#workspaces button:hover {
+    border-radius: 2px;
+    background-color: @surface_container_high;
+    color: @on_background;
+}
+
+#workspaces button.focused {
+    color: @primary;
+}
+
+#workspaces button.active {
+    background-color: @primary;
+    color: @surface_container;
+    border-radius: 2px;
+    padding: 0 10px 0 10px;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @surface_container;
+    border-radius: 2px;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#backlight,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#scratchpad,
+#power-profiles-daemon,
+
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#workspaces {
+    margin: 0 4px;
+}
+
+#clock {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 2px;
+    padding: 0 12px 0 12px;
+}
+
+#clock:hover {
+    color: @on_background;
+}
+
+#clock.date {
+    color: @on_background;
+}
+
+#battery {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 2px;
+    padding: 0 12px 0 12px
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+    border-radius: 2px;
+    background-color: @primary;
+    color: @surface_container
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 2px;
+    padding: 0 12px 0 12px;
+}
+
+#memory {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 2px;
+    padding: 0 12px 0 12px;
+}
+
+#disk {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 2px;
+    padding: 0 12px 0 12px;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#wireplumber {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 2px;
+    padding: 0 12px 0 12px;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 2px;
+    padding: 5px 10px 5px 10px
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: #cf5700;
+}
+
+#privacy-item.audio-in {
+    background-color: #1ca000;
+}
+
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
+
+#wireplumber:active,
+#mpris:active,
+#custom-exit:active {
+    background-color: #fff;
+    color: #fff;
+}
+
+#custom-exit {
+    background-color: @primary;
+    color: @surface_container;
+    border-radius: 2;
+    padding: 5px 5px 5px 10px
+}
