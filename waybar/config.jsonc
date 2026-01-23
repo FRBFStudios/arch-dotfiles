@@ -27,8 +27,8 @@
     "modules-right": [
         "mpris",
         "cpu",
-	"memory",
-	"disk",
+	    "memory",
+	    "disk",
         "battery",
         "power-profiles-daemon",
         "custom/exit"
@@ -90,7 +90,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% "
     },
     "disk": {
 	"format": "{percentage_used}% "
