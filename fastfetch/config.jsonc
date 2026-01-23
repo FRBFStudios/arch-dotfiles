@@ -1,0 +1,78 @@
+{
+  "$schema": "~/.config/fastfetch/json_schema.json",
+  "display": {
+    "separator": " "
+  },
+  "logo": {
+    "source": "~/Downloads/n_pfp_no_bg.png",
+    "height": 16,
+    "padding": {
+      "top": 1
+    }
+  },
+  "modules": [
+    "break",
+    "title",
+    {
+      "type": "separator",
+      "string": "————————————"
+    },
+    {
+      "type": "os",
+      "key": " "
+    },
+    
+    {
+      "type": "host",
+      "key": " ",
+      "format": "{family}"
+    },
+    {
+	"type": "kernel",
+	"key": " ",
+    },
+    {
+	"type": "uptime",
+	"key": " "
+    },
+    {
+      "type": "shell",
+      "key": " "
+    },
+    {
+      "type": "display",
+      "key": "󰍹 "
+    },
+    {
+      "type": "wm",
+      "key": " ",
+      "format": "{pretty-name} {version}"
+    },
+    {
+      "type": "terminal",
+      "key": " "
+    },
+    {
+      "type": "cpu",
+      "key": " "
+    },
+    {
+      "type": "memory",
+      "key": " "
+    },
+    {
+      "type": "disk",
+      "key": " ",
+      "format": "{size-used} / {size-total} ({size-percentage})"
+    },
+    {
+      "type": "battery",
+      "key": " "
+    },
+    "break",
+    {
+        "type": "custom",
+        "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m"
+    }
+  ]
+}
