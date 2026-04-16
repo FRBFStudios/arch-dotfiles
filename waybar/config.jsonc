@@ -150,7 +150,7 @@
     },
     
     "custom/exit": {
-        "format": " ",
+        "format": "",
         "on-click": "~/.config/rofi/scripts/powermenu.sh",
         "on-click-right": "hyprlock",
         "tooltip-format": "Left: Power menu\nRight: Lock screen"
