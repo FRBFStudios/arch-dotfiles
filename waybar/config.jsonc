@@ -19,14 +19,13 @@
     "modules-left": [
         "hyprland/workspaces",
         "tray",
-	"wireplumber",
-	"backlight"
+	"backlight",
+	"wireplumber"
     ],
     "modules-center": [
     	"clock"
     ],
     "modules-right": [
-        "mpris",
         "cpu",
 	    "memory",
 	    "disk",
