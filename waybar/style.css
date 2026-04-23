@@ -1,7 +1,7 @@
 @import 'colors.css';
 
 * {
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Roboto, "Font Awesome 7 Free", Helvetica, Arial, sans-serif;
     font-size: 16px;
     min-height: 0;
     font-weight: bold;
@@ -57,7 +57,7 @@ button {
 }
 
 #workspaces button {
-    padding: 0 4px;
+    padding: 0px 4px 0px 4px;
     margin: 0 2px;
     border-radius: 2px;
     background: @surface_container_low;
@@ -78,7 +78,7 @@ button {
     background-color: @primary;
     color: @surface_container;
     border-radius: 2px;
-    padding: 0 10px 0 10px;
+    padding: 7px 10px 7px 10px;
 }
 
 #workspaces button.urgent {
@@ -133,7 +133,7 @@ button {
     background-color: @surface_container;
     color: @primary;
     border-radius: 2px;
-    padding: 0 12px 0 12px
+    padding: 0 8px 0 8px
 }
 
 #battery.charging, #battery.plugged {
@@ -160,10 +160,10 @@ button {
 }
 
 #power-profiles-daemon {
-    padding-right: 15px;
     border-radius: 2px;
     background-color: @primary;
-    color: @surface_container
+    color: @surface_container;
+    padding: 0px 8px 0px 8px;
 }
 
 label:focus {
@@ -174,32 +174,35 @@ label:focus {
     background-color: @surface_container;
     color: @primary;
     border-radius: 2px;
-    padding: 0 12px 0 12px;
+    padding: 0 8px 0 3px;
 }
 
 #memory {
     background-color: @surface_container;
     color: @primary;
     border-radius: 2px;
-    padding: 0 12px 0 12px;
+    padding: 0 8px 0 8px;
 }
 
 #disk {
     background-color: @surface_container;
     color: @primary;
     border-radius: 2px;
-    padding: 0 12px 0 12px;
+    padding: 0 8px 0 8px;
 }
 
 #backlight {
-    background-color: #90b1b1;
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 2px;
+    padding: 0px 8px 0px 8px;
 }
 
 #wireplumber {
     background-color: @surface_container;
     color: @primary;
     border-radius: 2px;
-    padding: 0 12px 0 12px;
+    padding: 0 8px 0 8px;
 }
 
 #custom-media {
@@ -224,7 +227,7 @@ label:focus {
     background-color: @surface_container;
     color: @primary;
     border-radius: 2px;
-    padding: 5px 10px 5px 10px
+    padding: 0px 8px 0px 8px
 }
 
 #tray > .passive {
@@ -276,5 +279,5 @@ label:focus {
     background-color: @primary;
     color: @surface_container;
     border-radius: 2;
-    padding: 5px 5px 5px 10px
+    padding: 5px 8px 5px 8px
 }

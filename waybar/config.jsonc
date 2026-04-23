@@ -19,7 +19,8 @@
     "modules-left": [
         "hyprland/workspaces",
         "tray",
-	"wireplumber"
+	"wireplumber",
+	"backlight"
     ],
     "modules-center": [
     	"clock"
@@ -29,7 +30,7 @@
         "cpu",
 	    "memory",
 	    "disk",
-        "battery",
+	"battery",
         "power-profiles-daemon",
         "custom/exit"
     ],
@@ -129,7 +130,7 @@
     },
     
     "wireplumber": {
-        "format": "{volume}%",
+        "format": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": ["", "", ""],
 	"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
