@@ -192,22 +192,26 @@ hl.gesture({
 
 local mainMod = "SUPER"
 
--- Q = terminal, F = browser, E = explorer
+-- SUPER + Q = terminal, SUPER + F = browser, SUPER + E = explorer
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browser))
 
--- SPACE = app launcher, SHIFT + SPACE = emoji picker, ALT + TAB = window switcher (requires rofi)
+-- SUPER + SHIFT + S = screenshot (requires hyprshot)
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m output -o /home/FRBF/Pictures/screenshots"))
+
+-- SUPER + SPACE = app launcher, SUPER + SHIFT + SPACE = emoji picker, SUPER + ALT + TAB = window switcher, F4 = powermenu (requires rofi)
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -show-icons"))
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.exec_cmd("rofi -show emoji -theme ~/.config/rofi/emojitheme.rasi -emoji-format '{emoji}'"))
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("rofi -show window -show-icons"))
+hl.bind("F4", hl.dsp.exec_cmd("/home/FRBF/.config/rofi/scripts/powermenu.sh"))
 
--- W = toggle waybar
+-- SUPER + W = toggle waybar
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill waybar || waybar"))
 hl.bind(mainMod .. "+ SHIFT + W", hl.dsp.exec_cmd("pkill waypaper || waypaper"))
 
--- C = close window, M = shut down hyprland
+-- SUPER + C = close window, M = shut down hyprland
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
