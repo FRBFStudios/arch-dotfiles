@@ -2,7 +2,7 @@
 
 [templates.hyprland]
 input_path = '/home/FRBF/.config/matugen/templates/hyprland-colors.conf'
-output_path = '/home/FRBF/.config/hypr/colors.conf'
+output_path = '/home/FRBF/.config/hypr/colors.lua'
 post_hook = 'hyprctl reload'
 
 [templates.waybar]
@@ -42,7 +42,3 @@ output_path = '~/.config/matugen/papirus-folders/folder-color.txt'
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/midnight-discord.css'
 output_path = '~/.config/vesktop/themes/midnight-discord.css'
-
-[templates.yazi]
-input_path = '~/.config/matugen/templates/yazi-colors.toml'
-output_path = '~/.config/yazi/theme.toml'
