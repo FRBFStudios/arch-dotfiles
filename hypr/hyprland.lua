@@ -35,6 +35,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("/home/FRBF/.config/scripts/hyprpaper_randomizer.sh")
   hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("waypaper --random")
 end)
 
 
@@ -305,10 +306,12 @@ hl.window_rule({
 
 hl.window_rule({
     name = "gimp-fixes",
-    match = { class = "(gimp|dds)" },
-    match = { title = "negative:GNU Image Manipulation Program" },
+    match = {
+        class = "(gimp|dds)",
+        title = "negative:GNU Image Manipulation Program" 
+    },
 
-    float = yes,
+    float = true,
     size = { 720, 720 },
     center = true,
 })
