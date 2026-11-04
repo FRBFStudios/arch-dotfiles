@@ -49,7 +49,9 @@ hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("XCURSOR_SIZE", "24")
-
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("NVD_BACKEND", "direct")
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -108,7 +110,7 @@ hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
 
 -- Default springs
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("easy",           { type = "spring", mass = 0.6, stiffness = 240, dampening = 24 })
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
@@ -314,4 +316,12 @@ hl.window_rule({
     float = true,
     size = { 720, 720 },
     center = true,
+})
+
+hl.window_rule({
+    name = "gd-fullscreen",
+    match = {
+        title = "Geometry Dash" 
+    },
+    border_size = 0,
 })
