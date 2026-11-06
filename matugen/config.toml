@@ -1,8 +1,8 @@
 [config]
 
 [templates.hyprland]
-input_path = '/home/FRBF/.config/matugen/templates/hyprland-colors.conf'
-output_path = '/home/FRBF/.config/hypr/colors.lua'
+input_path = '/home/frbf/.config/matugen/templates/hyprland-colors.conf'
+output_path = '/home/frbf/.config/hypr/colors.lua'
 post_hook = 'hyprctl reload'
 
 [templates.waybar]

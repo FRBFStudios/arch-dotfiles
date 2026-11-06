@@ -8,13 +8,12 @@
 }
 
 window#waybar {
-    background: transparent;
-    background-color: transparent;
+    border: 2px solid @primary;
+    background: @surface_container;
     color: transparent;
     transition-property: background-color;
     transition-duration: 0.1s;
-    margin: 0;
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 window#waybar.hidden {
@@ -35,31 +34,31 @@ button {
     box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 0;
+    border-radius: 10px;
 }
 
 .modules-left {
-    background-color: @surface_container;
-    padding-left: 0px;
-    padding-right: 5px;
+    background-color: transparent;
+    padding-left: 3px;
+    padding-right: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 .modules-right {
-    background-color: @surface_container;
+    background-color: transparent;
     padding-left: 10px;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 #workspaces button {
     padding: 0px 4px 0px 4px;
     margin: 0 2px;
-    border-radius: 2px;
+    border-radius: 3px;
     background: @surface_container_low;
     color: @primary;
 }
@@ -78,7 +77,7 @@ button {
     background-color: @primary;
     color: @surface_container;
     border-radius: 2px;
-    padding: 7px 10px 7px 10px;
+    /*padding: 7px 10px 7px 10px;*/
 }
 
 #workspaces button.urgent {
@@ -106,18 +105,17 @@ button {
 #power-profiles-daemon,
 
 #mpd {
-    padding: 0 10px;
+    padding: 0 0px;
     color: #ffffff;
 }
 
 #workspaces {
-    margin: 0 4px;
+    margin: 0 0px;
 }
 
 #clock {
-    background-color: @surface_container;
+    background-color: transparent;
     color: @primary;
-    border-radius: 2px;
     padding: 0 12px 0 12px;
 }
 
@@ -132,7 +130,7 @@ button {
 #battery {
     background-color: @surface_container;
     color: @primary;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0 8px 0 8px
 }
 
@@ -160,7 +158,7 @@ button {
 }
 
 #power-profiles-daemon {
-    border-radius: 2px;
+    border-radius: 5px;
     background-color: @primary;
     color: @surface_container;
     padding: 0px 8px 0px 8px;
@@ -173,35 +171,35 @@ label:focus {
 #cpu {
     background-color: @surface_container;
     color: @primary;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0 8px 0 3px;
 }
 
 #memory {
     background-color: @surface_container;
     color: @primary;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0 8px 0 8px;
 }
 
 #disk {
     background-color: @surface_container;
     color: @primary;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0 8px 0 8px;
 }
 
 #backlight {
     background-color: @surface_container;
     color: @primary;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0px 8px 0px 8px;
 }
 
 #wireplumber {
     background-color: @surface_container;
     color: @primary;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0 8px 0 8px;
 }
 
@@ -226,7 +224,7 @@ label:focus {
 #tray {
     background-color: @surface_container;
     color: @primary;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 0px 8px 0px 8px
 }
 
@@ -278,6 +276,7 @@ label:focus {
 #custom-exit {
     background-color: @primary;
     color: @surface_container;
-    border-radius: 2;
-    padding: 5px 8px 5px 8px
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 2px 4px 2px 4px
 }

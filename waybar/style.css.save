@@ -1,0 +1,282 @@
+@import 'colors.css';
+
+* {
+    font-family: Roboto, "Font Awesome 7 Free", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    border: 2px solid @primary;
+    background: @surface_containery;
+    color: transparent;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    border-radius: 5px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+#mpris {
+    color: @primary;
+    background-color: @surface_container;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 10px;
+}
+
+.modules-left {
+    background-color: transparent;
+    padding-left: 3px;
+    padding-right: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+}
+
+.modules-right {
+    background-color: transparent;
+    padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+
+#workspaces button {
+    padding: 0px 4px 0px 4px;
+    margin: 0 2px;
+    border-radius: 3px;
+    background: @surface_container_low;
+    color: @primary;
+}
+
+#workspaces button:hover {
+    border-radius: 2px;
+    background-color: @surface_container_high;
+    color: @on_background;
+}
+
+#workspaces button.focused {
+    color: @primary;
+}
+
+#workspaces button.active {
+    background-color: @primary;
+    color: @surface_container;
+    border-radius: 2px;
+    /*padding: 7px 10px 7px 10px;*/
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @surface_container;
+    border-radius: 2px;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#backlight,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#scratchpad,
+#power-profiles-daemon,
+
+#mpd {
+    padding: 0 0px;
+    color: #ffffff;
+}
+
+#workspaces {
+    margin: 0 0px;
+}
+
+#clock {
+    background-color: transparent;
+    color: @primary;
+    padding: 0 12px 0 12px;
+}
+
+#clock:hover {
+    color: @on_background;
+}
+
+#clock.date {
+    color: @on_background;
+}
+
+#battery {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 5px;
+    padding: 0 8px 0 8px
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    border-radius: 5px;
+    background-color: @primary;
+    color: @surface_container;
+    padding: 0px 8px 0px 8px;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 5px;
+    padding: 0 8px 0 3px;
+}
+
+#memory {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 5px;
+    padding: 0 8px 0 8px;
+}
+
+#disk {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 5px;
+    padding: 0 8px 0 8px;
+}
+
+#backlight {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 5px;
+    padding: 0px 8px 0px 8px;
+}
+
+#wireplumber {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 5px;
+    padding: 0 8px 0 8px;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    background-color: @surface_container;
+    color: @primary;
+    border-radius: 5px;
+    padding: 0px 8px 0px 8px
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: #cf5700;
+}
+
+#privacy-item.audio-in {
+    background-color: #1ca000;
+}
+
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
+
+#wireplumber:active,
+#mpris:active,
+#custom-exit:active {
+    background-color: #fff;
+    color: #fff;
+}
+
+#custom-exit {
+    background-color: @primary;
+    color: @surface_container;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 2px 4px 2px 4px
+}
